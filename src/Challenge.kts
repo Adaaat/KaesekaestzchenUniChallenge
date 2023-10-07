@@ -108,17 +108,20 @@ while (true) {
     }
 
     val pos = eingabe.split(",")
+    var y: Int
+    var x: Int
 
-    val y = pos[0].toInt()
-    val x = pos[1].toInt()
 
    try{
+       y = pos[0].toInt()
+       x = pos[1].toInt()
+
        if( feld[y][x] == -1){
-           throw Exception("Bei den Koordinaten handelt es sich nicht um ein gültiges Feld!! Wähle erneut")
+           throw Exception("Bei den Eingabe handelt es sich nicht um ein gültiges Feld!! Wähle erneut \n")
        }
 
    } catch(ofe: Exception ){
-       println("Bei den Koordinaten handelt es sich nicht um ein gültiges Feld!! Wähle erneut")
+       println("Bei den Eingabe handelt es sich nicht um ein gültiges Feld!! Wähle erneut \n")
        continue
    }
 
@@ -127,7 +130,7 @@ while (true) {
         feld[y][x] = aktuellerSpieler;
 
     } else {
-        println("Das Feld ist bereits belegt! Wähle ein freies Feld!")
+        println("Das Feld ist bereits belegt! Wähle ein freies Feld! \n")
         continue
     }
 
